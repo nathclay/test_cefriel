@@ -19,7 +19,8 @@ TEST(ConfigParserTest, ParseValidLine) {
 // Assicurati che restituisca nullptr. Aggiungi un messaggio personalizzato in caso di fallimento.
 TEST(ConfigParserTest, ParseLineWithoutEqualsSignReturnsNull) {
     // IL TUO CODICE QUI
-    //boooh ddd eee
+    ConfigPair* pair = ParseConfigLine("invalidline");
+    EXPECT_EQ(pair, nullptr) << "Il parsing di una linea senza '=' deve restituire null";
 }
 
 // TODO STUDENTE 2: Testa il parsing di una linea vuota "".
